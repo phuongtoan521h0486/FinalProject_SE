@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DAL_Order
+    public class DAL_Order
     {
         public DTO_Order order;
         public DAL_Order()

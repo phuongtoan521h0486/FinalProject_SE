@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BUS_Accountant.cs" />
+    <Compile Include="BUS_DeliveryNote.cs" />
+    <Compile Include="BUS_DeliveryNoteItem.cs" />
+    <Compile Include="BUS_Order.cs" />
+    <Compile Include="BUS_OrderItem.cs" />
+    <Compile Include="BUS_Payment.cs" />
+    <Compile Include="BUS_Product.cs" />
+    <Compile Include="BUS_Reseller.cs" />
+    <Compile Include="BUS_Supplier.cs" />
+    <Compile Include="BUS_Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

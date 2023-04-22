@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace Mobile_Phone_Distribution_Management_System
 {
@@ -88,6 +89,5 @@ namespace Mobile_Phone_Distribution_Management_System
                 labelErrorMessage.Text = "Invalid username or password";
             }
         }
-
     }
 }
