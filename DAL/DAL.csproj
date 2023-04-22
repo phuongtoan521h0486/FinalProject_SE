@@ -45,6 +45,14 @@
     <Compile Include="DAL_Accountant.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DAL_DeliveryNote.cs" />
+    <Compile Include="DAL_DeliveryNoteItem.cs" />
+    <Compile Include="DAL_Order.cs" />
+    <Compile Include="DAL_OrderItem.cs" />
+    <Compile Include="DAL_Payment.cs" />
+    <Compile Include="DAL_Product.cs" />
+    <Compile Include="DAL_Reseller.cs" />
+    <Compile Include="DAL_Supplier.cs" />
+    <Compile Include="DAL_Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

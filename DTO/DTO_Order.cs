@@ -13,7 +13,6 @@ namespace DTO
         public DateTime DateOrdered { get; set; }
         public string ResellerID { get; set; }
         public string OrderStatus { get; set; }
-        // Full parameter constructor
         public DTO_Order(string orderID, string orderNumber, DateTime dateOrdered, string resellerID, string orderStatus)
         {
             OrderID = orderID;
@@ -22,8 +21,6 @@ namespace DTO
             ResellerID = resellerID;
             OrderStatus = orderStatus;
         }
-
-        // Default constructor
         public DTO_Order()
         {
         }
