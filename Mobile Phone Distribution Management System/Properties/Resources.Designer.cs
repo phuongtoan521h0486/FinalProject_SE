@@ -83,6 +83,26 @@ namespace Mobile_Phone_Distribution_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logobaner {
+            get {
+                object obj = ResourceManager.GetObject("logobaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoBlackVer {
+            get {
+                object obj = ResourceManager.GetObject("logoBlackVer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoWhiteVer {
             get {
                 object obj = ResourceManager.GetObject("logoWhiteVer", resourceCulture);
@@ -116,6 +136,16 @@ namespace Mobile_Phone_Distribution_Management_System.Properties {
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_icon {
+            get {
+                object obj = ResourceManager.GetObject("product_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

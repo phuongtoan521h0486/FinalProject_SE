@@ -13,6 +13,8 @@ namespace Mobile_Phone_Distribution_Management_System
 {
     public partial class FormLogin : Form
     {
+        public static string fullName;
+        public static bool isAdmin;
         public FormLogin()
         {
             InitializeComponent();
@@ -21,6 +23,11 @@ namespace Mobile_Phone_Distribution_Management_System
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
 
         private void textBoxUser_Click(object sender, EventArgs e)
@@ -82,11 +89,20 @@ namespace Mobile_Phone_Distribution_Management_System
                 labelErrorMessage.Text = "";
                 labelErrorUser.Visible = false;
                 labelErrorPass.Visible = false;
-                this.Close();
+                fullName = "Toan";
+                this.Hide();
             }
             else
             {
                 labelErrorMessage.Text = "Invalid username or password";
+            }
+        }
+
+        private void textBoxPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                buttonLogin.PerformClick();
             }
         }
     }
