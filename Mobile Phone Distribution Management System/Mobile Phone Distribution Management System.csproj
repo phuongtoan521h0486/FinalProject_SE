@@ -69,18 +69,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -125,6 +125,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\product_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\exit_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\maximize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\minimize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\minimize_white_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\exit_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\minimize_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\buy_13374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\burger_line_list_menu_nav_navigation_option_icon_123231.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1904661-building-dashboard-default-home-house-page-start_122511.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
