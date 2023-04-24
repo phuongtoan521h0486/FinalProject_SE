@@ -51,6 +51,7 @@
     <Compile Include="BUS_Reseller.cs" />
     <Compile Include="BUS_Supplier.cs" />
     <Compile Include="BUS_Warehouse.cs" />
+    <Compile Include="BUS_Dashboard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

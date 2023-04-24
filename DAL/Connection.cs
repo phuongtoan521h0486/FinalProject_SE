@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class Connection
+    public class Connection
     {
         public static string strConn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
 
