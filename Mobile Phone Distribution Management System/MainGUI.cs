@@ -28,6 +28,8 @@ namespace Mobile_Phone_Distribution_Management_System
         private void MainGUI_Load(object sender, EventArgs e)
         {
             Form fromLogin = new FormLogin();
+            Form fromDashboard = new FormDashboard();
+            fromDashboard.ShowDialog();
             //fromLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }

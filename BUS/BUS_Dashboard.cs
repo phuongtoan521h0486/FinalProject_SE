@@ -44,7 +44,7 @@ namespace BUS
                     cm.CommandText = "SELECT COUNT(ProductID) FROM Product";
                     NumProducts = (int)cm.ExecuteScalar();
 
-                    cm.CommandText = @"SELECT COUNT(ProductID) FROM [Order] " +
+                    cm.CommandText = @"SELECT COUNT(OrderID) FROM [Order] " +
                                     "WHERE DateOrdered BETWEEN @fromDate and @toDate";
                     cm.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
                     cm.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
@@ -74,10 +74,10 @@ namespace BUS
                     while(reader.Read())
                     {
                         resultTable.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1]));
-                        TotalRevenue += (decimal)reader[0];
+                        TotalRevenue += (decimal)reader[1];
                         
                     }
-                    TotalProfit = TotalRevenue * 0.1m; // 10%
+                    TotalProfit = TotalRevenue * 0.05m; // 10%
                     reader.Close();
 
                     if(numberDays <= 30)
