@@ -172,5 +172,8 @@
   <ItemGroup>
     <None Include="bin\Debug\1904661-building-dashboard-default-home-house-page-start_122511.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ok.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
