@@ -17,7 +17,7 @@ namespace Mobile_Phone_Distribution_Management_System
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        Form currentForm;
         public MainGUI()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Mobile_Phone_Distribution_Management_System
         {
             Form fromLogin = new FormLogin();
             Form fromDashboard = new FormDashboard();
-            fromDashboard.ShowDialog();
+      //    fromDashboard.ShowDialog();
             //fromLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
@@ -113,6 +113,29 @@ namespace Mobile_Phone_Distribution_Management_System
                 buttonSetting.Text = string.Empty;
                 buttonHelp.Text = string.Empty;
             }
+        }
+
+        private void loadForm(object Form)
+        {
+            if (currentForm != null) currentForm.Close();
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(f);
+            this.panelMain.Tag = f;
+            currentForm = f;
+            f.Show();
+        }
+
+        private void buttonDashBoard_Click(object sender, EventArgs e)
+        {
+            loadForm(new FormDashboard());
+            
+        }
+
+        private void buttonCloseCurrentForm_Click(object sender, EventArgs e)
+        {
+            if (currentForm != null) currentForm.Close();
         }
     }
 }

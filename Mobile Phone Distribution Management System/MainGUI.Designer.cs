@@ -40,12 +40,13 @@ namespace Mobile_Phone_Distribution_Management_System
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelTopBar = new System.Windows.Forms.Panel();
+            this.labelNameOfForm = new System.Windows.Forms.Label();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonCloseCurrentForm = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonMaximize = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
             this.buttonOrders = new System.Windows.Forms.Button();
@@ -56,9 +57,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panelSubOrders.SuspendLayout();
             this.panelSubProducts.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelTopBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -78,7 +77,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panelMenu.MaximumSize = new System.Drawing.Size(250, 1080);
             this.panelMenu.MinimumSize = new System.Drawing.Size(48, 681);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 720);
+            this.panelMenu.Size = new System.Drawing.Size(250, 681);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubOrders
@@ -213,29 +212,56 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panel2.Size = new System.Drawing.Size(250, 61);
             this.panel2.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.panelTopBar);
-            this.panel1.Controls.Add(this.pictureBoxLogo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(250, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 720);
-            this.panel1.TabIndex = 2;
-            // 
             // panelTopBar
             // 
             this.panelTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.panelTopBar.Controls.Add(this.buttonCloseCurrentForm);
+            this.panelTopBar.Controls.Add(this.labelNameOfForm);
             this.panelTopBar.Controls.Add(this.buttonMinimize);
             this.panelTopBar.Controls.Add(this.buttonMaximize);
             this.panelTopBar.Controls.Add(this.buttonExit);
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTopBar.Location = new System.Drawing.Point(250, 0);
             this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(830, 22);
+            this.panelTopBar.Size = new System.Drawing.Size(1134, 44);
             this.panelTopBar.TabIndex = 2;
             this.panelTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTopBar_MouseDown);
+            // 
+            // labelNameOfForm
+            // 
+            this.labelNameOfForm.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameOfForm.ForeColor = System.Drawing.Color.White;
+            this.labelNameOfForm.Location = new System.Drawing.Point(3, 3);
+            this.labelNameOfForm.Name = "labelNameOfForm";
+            this.labelNameOfForm.Size = new System.Drawing.Size(126, 38);
+            this.labelNameOfForm.TabIndex = 1;
+            this.labelNameOfForm.Text = "Dashboard";
+            this.labelNameOfForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.SystemColors.Control;
+            this.panelMain.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.logobaner3;
+            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(250, 44);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1134, 637);
+            this.panelMain.TabIndex = 2;
+            // 
+            // buttonCloseCurrentForm
+            // 
+            this.buttonCloseCurrentForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
+            this.buttonCloseCurrentForm.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.exit_white4;
+            this.buttonCloseCurrentForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCloseCurrentForm.FlatAppearance.BorderSize = 0;
+            this.buttonCloseCurrentForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseCurrentForm.Location = new System.Drawing.Point(128, 0);
+            this.buttonCloseCurrentForm.Name = "buttonCloseCurrentForm";
+            this.buttonCloseCurrentForm.Size = new System.Drawing.Size(44, 44);
+            this.buttonCloseCurrentForm.TabIndex = 2;
+            this.buttonCloseCurrentForm.UseVisualStyleBackColor = false;
+            this.buttonCloseCurrentForm.Click += new System.EventHandler(this.buttonCloseCurrentForm_Click);
             // 
             // buttonMinimize
             // 
@@ -244,9 +270,9 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(770, 0);
+            this.buttonMinimize.Location = new System.Drawing.Point(1074, 0);
             this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(20, 22);
+            this.buttonMinimize.Size = new System.Drawing.Size(20, 44);
             this.buttonMinimize.TabIndex = 0;
             this.buttonMinimize.UseVisualStyleBackColor = true;
             this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
@@ -258,9 +284,9 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonMaximize.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonMaximize.FlatAppearance.BorderSize = 0;
             this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximize.Location = new System.Drawing.Point(790, 0);
+            this.buttonMaximize.Location = new System.Drawing.Point(1094, 0);
             this.buttonMaximize.Name = "buttonMaximize";
-            this.buttonMaximize.Size = new System.Drawing.Size(20, 22);
+            this.buttonMaximize.Size = new System.Drawing.Size(20, 44);
             this.buttonMaximize.TabIndex = 0;
             this.buttonMaximize.UseVisualStyleBackColor = true;
             this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
@@ -272,23 +298,12 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Location = new System.Drawing.Point(810, 0);
+            this.buttonExit.Location = new System.Drawing.Point(1114, 0);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(20, 22);
+            this.buttonExit.Size = new System.Drawing.Size(20, 44);
             this.buttonExit.TabIndex = 0;
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxLogo.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.logobaner1;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(275, 330);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(328, 89);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 1;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // buttonHelp
             // 
@@ -383,6 +398,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDashBoard.UseVisualStyleBackColor = true;
+            this.buttonDashBoard.Click += new System.EventHandler(this.buttonDashBoard_Click);
             // 
             // buttonMenu
             // 
@@ -407,11 +423,12 @@ namespace Mobile_Phone_Distribution_Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 720);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1384, 681);
+            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelTopBar);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1080, 720);
+            this.MinimumSize = new System.Drawing.Size(1400, 720);
             this.Name = "MainGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
@@ -420,9 +437,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panelSubOrders.ResumeLayout(false);
             this.panelSubProducts.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panelTopBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,8 +445,7 @@ namespace Mobile_Phone_Distribution_Management_System
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelSubOrders;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -451,6 +465,8 @@ namespace Mobile_Phone_Distribution_Management_System
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonDashBoard;
+        private System.Windows.Forms.Label labelNameOfForm;
+        private System.Windows.Forms.Button buttonCloseCurrentForm;
     }
 }
 

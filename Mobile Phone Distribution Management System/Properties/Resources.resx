@@ -133,6 +133,9 @@
   <data name="exit_white2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\exit_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="exit_white3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\exit_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="maximize_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\maximize_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="not eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\not eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,6 +180,9 @@
   </data>
   <data name="logoWhiteVer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\logoWhiteVer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="products1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,11 +214,14 @@
   <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logobaner2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logobaner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="exit_white1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\exit_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buy_133742" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\buy_13374.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit_white4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\exit_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +241,8 @@
   <data name="logoWhiteVer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\logoWhiteVer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="not eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\not eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buy_133742" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\buy_13374.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="products2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,7 +253,7 @@
   <data name="exit_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\exit_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logobaner3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logobaner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

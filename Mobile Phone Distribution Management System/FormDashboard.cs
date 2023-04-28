@@ -14,12 +14,14 @@ namespace Mobile_Phone_Distribution_Management_System
     public partial class FormDashboard : Form
     {
         private BUS_Dashboard dashboard;
+        private Button currentButton;
         public FormDashboard()
         {
             InitializeComponent();
             dateTimePickerStartDate.Value = DateTime.Today.AddDays(-7);
             dateTimePickerEndDate.Value = DateTime.Now;
             buttonLast7Days.Select();
+            SetDateMenuButtonsUI(buttonLast7Days);
             dashboard = new BUS_Dashboard();
             LoadData();
         }
@@ -46,11 +48,36 @@ namespace Mobile_Phone_Distribution_Management_System
             }
         }
 
-        private void DisableCustomDates()
+        private void SetDateMenuButtonsUI(object button)
         {
-            dateTimePickerStartDate.Enabled = false;
-            dateTimePickerEndDate.Enabled = false;
-            buttonOK.Visible = false;
+            var btn = (Button)button;
+            btn.BackColor = buttonLast30Days.FlatAppearance.BorderColor;
+            btn.ForeColor = Color.White;
+
+            if (currentButton != null && currentButton != btn)
+            {
+                currentButton.BackColor = Color.FromArgb(35, 40, 45);
+                currentButton.ForeColor = Color.FromArgb(124, 141, 181);
+            }
+            currentButton = btn;
+
+            if (btn==buttonCustomDate)
+            {
+                dateTimePickerStartDate.Enabled = true;
+                dateTimePickerEndDate.Enabled = true;
+                buttonOK.Visible = true;
+                labelStartDate.Cursor = Cursors.Hand;
+                labelEndDate.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                dateTimePickerStartDate.Enabled = false;
+                dateTimePickerEndDate.Enabled = false;
+                buttonOK.Visible = false;
+                labelStartDate.Cursor = Cursors.Default;
+                labelEndDate.Cursor = Cursors.Default;
+            }
+            
         }
 
         private void buttonToday_Click(object sender, EventArgs e)
@@ -58,7 +85,7 @@ namespace Mobile_Phone_Distribution_Management_System
             dateTimePickerStartDate.Value = DateTime.Today;
             dateTimePickerEndDate.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            SetDateMenuButtonsUI(sender);
         }
 
         private void buttonLast7Days_Click(object sender, EventArgs e)
@@ -66,7 +93,7 @@ namespace Mobile_Phone_Distribution_Management_System
             dateTimePickerStartDate.Value = DateTime.Today.AddDays(-7);
             dateTimePickerEndDate.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            SetDateMenuButtonsUI(sender);
         }
 
         private void buttonLast30Days_Click(object sender, EventArgs e)
@@ -74,7 +101,7 @@ namespace Mobile_Phone_Distribution_Management_System
             dateTimePickerStartDate.Value = DateTime.Today.AddDays(-30);
             dateTimePickerEndDate.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            SetDateMenuButtonsUI(sender);
         }
 
         private void buttonThisMonth_Click(object sender, EventArgs e)
@@ -82,19 +109,53 @@ namespace Mobile_Phone_Distribution_Management_System
             dateTimePickerStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             dateTimePickerEndDate.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            SetDateMenuButtonsUI(sender);
         }
 
         private void buttonCustomDate_Click(object sender, EventArgs e)
         {
-            dateTimePickerStartDate.Enabled = true;
-            dateTimePickerEndDate.Enabled = true;
-            buttonOK.Visible = true;
+            
+            SetDateMenuButtonsUI(sender);
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void labelStartDate_Click(object sender, EventArgs e)
+        {
+            if (currentButton == buttonCustomDate)
+            {
+                dateTimePickerStartDate.Select();
+                SendKeys.Send("%{DOWN}");
+
+            }
+        }
+
+        private void labelEndDate_Click(object sender, EventArgs e)
+        {
+            if (currentButton == buttonCustomDate)
+            {
+                dateTimePickerEndDate.Select();
+                SendKeys.Send("%{DOWN}");
+            }
+        }
+
+        private void dateTimePickerStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            labelStartDate.Text = dateTimePickerStartDate.Text;
+        }
+
+        private void dateTimePickerEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            labelEndDate.Text = dateTimePickerEndDate.Text;
+        }
+
+        private void FormDashboard_Load(object sender, EventArgs e)
+        {
+            labelStartDate.Text = dateTimePickerStartDate.Text;
+            labelEndDate.Text = dateTimePickerEndDate.Text;
         }
     }
 }

@@ -183,6 +183,26 @@ namespace Mobile_Phone_Distribution_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit_white3 {
+            get {
+                object obj = ResourceManager.GetObject("exit_white3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_white4 {
+            get {
+                object obj = ResourceManager.GetObject("exit_white4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
@@ -236,6 +256,26 @@ namespace Mobile_Phone_Distribution_Management_System.Properties {
         internal static System.Drawing.Bitmap logobaner1 {
             get {
                 object obj = ResourceManager.GetObject("logobaner1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logobaner2 {
+            get {
+                object obj = ResourceManager.GetObject("logobaner2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logobaner3 {
+            get {
+                object obj = ResourceManager.GetObject("logobaner3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
