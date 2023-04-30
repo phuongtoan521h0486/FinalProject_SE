@@ -117,7 +117,10 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void loadForm(object Form)
         {
-            if (currentForm != null) currentForm.Close();
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
@@ -135,7 +138,10 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void buttonCloseCurrentForm_Click(object sender, EventArgs e)
         {
-            if (currentForm != null) currentForm.Close();
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
         }
     }
 }
