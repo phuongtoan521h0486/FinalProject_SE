@@ -15,22 +15,22 @@ namespace DAL
         {
             product = new DTO_Product();
         }
-        public DAL_Product(string productID, string productName, decimal price, string supplierID)
+        public DAL_Product(string productID, string productName, decimal price)
         {
-            product = new DTO_Product(productID, productName, price, supplierID);
+            product = new DTO_Product(productID, productName, price);
         }
 
         public void add()
         {
-            string sql = string.Format("INSERT INTO Product VALUES('{0}', '{1}', {2}, {3})",
-                product.ProductID, product.ProductName, product.Price, product.SupplierID);
+            string sql = string.Format("INSERT INTO Supplier VALUES('{0}', '{1}', {2})",
+                product.ProductID, product.ProductName, product.Price);
             Connection.actionQuery(sql);
         }
 
         public void update()
         {
-            string sql = string.Format("UPDATE Product SET ProductName = '{1}', Price = {2}, SupplierID = '{3}' WHERE ProductID = '{0}'",
-                product.ProductID, product.ProductName, product.Price, product.SupplierID);
+            string sql = string.Format("UPDATE Product SET ProductName = '{1}', Price = {2} WHERE ProductID = '{0}'",
+                product.ProductID, product.ProductName, product.Price);
             Connection.actionQuery(sql);
         }
         public void delete()

@@ -27,11 +27,10 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-            Form formLogin = new FormLogin();
-            Form formDashboard = new FormDashboard();
-            Form formImportGoods = new FormImportGoods();
-            formImportGoods.ShowDialog();
-            //formLogin.ShowDialog();
+            Form fromLogin = new FormLogin();
+            Form fromDashboard = new FormDashboard();
+      //    fromDashboard.ShowDialog();
+            //fromLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
         private void hideSubMenu()
@@ -134,16 +133,12 @@ namespace Mobile_Phone_Distribution_Management_System
         private void buttonDashBoard_Click(object sender, EventArgs e)
         {
             loadForm(new FormDashboard());
-            labelNameOfForm.Text = "Dashboard";
-            labelNameOfForm.Visible = true;
-            buttonCloseCurrentForm.Visible = true;
+            
         }
 
         private void buttonCloseCurrentForm_Click(object sender, EventArgs e)
         {
             if (currentForm != null) currentForm.Close();
-            labelNameOfForm.Visible = false;
-            buttonCloseCurrentForm.Visible = false;
         }
     }
 }

@@ -17,9 +17,9 @@ namespace BUS
             warehouse = new DAL_Warehouse();
         }
 
-        public BUS_Warehouse(string warehouseReceiptNumber, DateTime dateReceived, string productID, int quantity)
+        public BUS_Warehouse(string warehouseReceiptNumber, DateTime dateReceived, string supplierID, string productID, int quantity)
         {
-            warehouse = new DAL_Warehouse(warehouseReceiptNumber, dateReceived, productID, quantity);
+            warehouse = new DAL_Warehouse(warehouseReceiptNumber, dateReceived, supplierID, productID, quantity);
         }
 
         public void add()
