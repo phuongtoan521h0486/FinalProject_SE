@@ -17,9 +17,9 @@ namespace BUS
             product = new DAL_Product();
         }
 
-        public BUS_Product(string productID, string productName, decimal price)
+        public BUS_Product(string productID, string productName, decimal price, string supplierID)
         {
-            product = new DAL_Product(productID, productName, price);
+            product = new DAL_Product(productID, productName, price, supplierID);
         }
 
         public void add()
