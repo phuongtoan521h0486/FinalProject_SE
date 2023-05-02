@@ -30,7 +30,7 @@ namespace Mobile_Phone_Distribution_Management_System
             Form formLogin = new FormLogin();
             Form formDashboard = new FormDashboard();
             Form formImportGoods = new FormImportGoods();
-            formImportGoods.ShowDialog();
+            //formImportGoods.ShowDialog();
             //formLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
