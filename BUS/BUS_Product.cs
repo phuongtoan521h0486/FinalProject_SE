@@ -59,5 +59,10 @@ namespace BUS
                 return "P001";
             }
         }
+
+        public DataTable getIdByProductName(string productName)
+        {
+            return product.getIdByProductName(productName);
+        }
     }
 }

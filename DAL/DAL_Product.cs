@@ -50,5 +50,11 @@ namespace DAL
             string sql = "SELECT TOP 1 ProductID FROM Product ORDER BY ProductID DESC";
             return Connection.selectQuery(sql);
         }
+
+        public DataTable getIdByProductName(string productName)
+        {
+            string sql = string.Format("SELECT ProductID FROM Product WHERE ProductName = '{0}'", productName);
+            return Connection.selectQuery(sql);
+        }
     }
 }

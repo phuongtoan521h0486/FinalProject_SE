@@ -30,7 +30,7 @@ namespace Mobile_Phone_Distribution_Management_System
             Form formLogin = new FormLogin();
             Form formDashboard = new FormDashboard();
             Form formImportGoods = new FormImportGoods();
-            formImportGoods.ShowDialog();
+            //formImportGoods.ShowDialog();
             //formLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
@@ -52,12 +52,6 @@ namespace Mobile_Phone_Distribution_Management_System
         private void buttonProducts_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubProducts);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // code here
-            hideSubMenu();
         }
 
         private void buttonOrders_Click(object sender, EventArgs e)
@@ -141,6 +135,16 @@ namespace Mobile_Phone_Distribution_Management_System
             if (currentForm != null) currentForm.Close();
             labelNameOfForm.Visible = false;
             buttonCloseCurrentForm.Visible = false;
+        }
+
+        private void buttonImportGoods_Click(object sender, EventArgs e)
+        {
+            loadForm(new FormImportGoods());
+            labelNameOfForm.Text = "Import Goods";
+            labelNameOfForm.Visible = true;
+            buttonCloseCurrentForm.Visible = true;
+
+            hideSubMenu(); 
         }
     }
 }

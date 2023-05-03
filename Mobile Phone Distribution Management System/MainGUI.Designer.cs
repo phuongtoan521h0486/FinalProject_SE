@@ -40,7 +40,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonOrders = new System.Windows.Forms.Button();
             this.panelSubProducts = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDeliverGoods = new System.Windows.Forms.Button();
             this.buttonImportGoods = new System.Windows.Forms.Button();
             this.buttonProducts = new System.Windows.Forms.Button();
             this.buttonDashBoard = new System.Windows.Forms.Button();
@@ -200,7 +200,7 @@ namespace Mobile_Phone_Distribution_Management_System
             // 
             this.panelSubProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
             this.panelSubProducts.Controls.Add(this.button3);
-            this.panelSubProducts.Controls.Add(this.button2);
+            this.panelSubProducts.Controls.Add(this.buttonDeliverGoods);
             this.panelSubProducts.Controls.Add(this.buttonImportGoods);
             this.panelSubProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubProducts.Location = new System.Drawing.Point(0, 151);
@@ -225,21 +225,21 @@ namespace Mobile_Phone_Distribution_Management_System
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonDeliverGoods
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Location = new System.Drawing.Point(0, 40);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(250, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDeliverGoods.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDeliverGoods.FlatAppearance.BorderSize = 0;
+            this.buttonDeliverGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeliverGoods.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeliverGoods.ForeColor = System.Drawing.Color.LightGray;
+            this.buttonDeliverGoods.Location = new System.Drawing.Point(0, 40);
+            this.buttonDeliverGoods.Name = "buttonDeliverGoods";
+            this.buttonDeliverGoods.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonDeliverGoods.Size = new System.Drawing.Size(250, 40);
+            this.buttonDeliverGoods.TabIndex = 1;
+            this.buttonDeliverGoods.Text = "Deliver Goods";
+            this.buttonDeliverGoods.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDeliverGoods.UseVisualStyleBackColor = true;
             // 
             // buttonImportGoods
             // 
@@ -256,7 +256,7 @@ namespace Mobile_Phone_Distribution_Management_System
             this.buttonImportGoods.Text = "Import Goods";
             this.buttonImportGoods.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonImportGoods.UseVisualStyleBackColor = true;
-            this.buttonImportGoods.Click += new System.EventHandler(this.button1_Click);
+            this.buttonImportGoods.Click += new System.EventHandler(this.buttonImportGoods_Click);
             // 
             // buttonProducts
             // 
@@ -455,7 +455,7 @@ namespace Mobile_Phone_Distribution_Management_System
         private System.Windows.Forms.Button buttonOrders;
         private System.Windows.Forms.Panel panelSubProducts;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDeliverGoods;
         private System.Windows.Forms.Button buttonImportGoods;
         private System.Windows.Forms.Button buttonProducts;
         private System.Windows.Forms.Panel panel2;

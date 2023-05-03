@@ -44,6 +44,7 @@
     <Compile Include="BUS_Accountant.cs" />
     <Compile Include="BUS_DeliveryNote.cs" />
     <Compile Include="BUS_DeliveryNoteItem.cs" />
+    <Compile Include="BUS_ImportGoods.cs" />
     <Compile Include="BUS_Order.cs" />
     <Compile Include="BUS_OrderItem.cs" />
     <Compile Include="BUS_Payment.cs" />
