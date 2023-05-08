@@ -29,8 +29,6 @@ namespace Mobile_Phone_Distribution_Management_System
         {
             Form formLogin = new FormLogin();
             Form formImportGoods = new FormImportGoods();
-            Form formDelivery = new FormDelivery();
-            formDelivery.ShowDialog();
             //formLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
