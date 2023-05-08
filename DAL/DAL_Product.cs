@@ -20,6 +20,14 @@ namespace DAL
             product = new DTO_Product(productID, productName, price, supplierID);
         }
 
+        public DAL_Supplier DAL_Supplier
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO Product VALUES('{0}', '{1}', {2}, {3})",

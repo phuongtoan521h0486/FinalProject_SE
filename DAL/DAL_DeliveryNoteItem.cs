@@ -20,6 +20,22 @@ namespace DAL
             deliveryNoteItem = new DTO_DeliveryNoteItem(deliveryNoteNumber, productID, quantity);
         }
 
+        public DAL_Product DAL_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DAL_DeliveryNote DAL_DeliveryNote
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO DeliveryNoteItem VALUES('{0}', '{1}', {2})",

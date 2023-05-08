@@ -22,6 +22,14 @@ namespace BUS
             product = new DAL_Product(productID, productName, price, supplierID);
         }
 
+        public BUS_Supplier BUS_Supplier
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             product.add();

@@ -20,6 +20,22 @@ namespace DAL
             orderitem = new DTO_OrderItem(orderID, productID, quantity, price);
         }
 
+        public DAL_Order DAL_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DAL_Product DAL_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO [OrderItem] VALUES('{0}', '{1}', {2}, {3})",

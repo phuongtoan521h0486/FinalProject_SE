@@ -20,6 +20,22 @@ namespace DAL
             payment = new DTO_Payment(paymentID, amount, paymentDate, paymentStatus, orderID, resellerID);
         }
 
+        public DAL_Reseller DAL_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DAL_Order DAL_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO Payment VALUES('{0}', '{1}', '{2}', {3}, '{4:yyyy-MM-dd}', '{5}')",

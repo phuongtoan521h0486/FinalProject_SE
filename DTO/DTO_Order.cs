@@ -13,6 +13,15 @@ namespace DTO
         public DateTime DateOrdered { get; set; }
         public string ResellerID { get; set; }
         public string OrderStatus { get; set; }
+
+        public DTO_Reseller DTO_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_Order(string orderID, string orderNumber, DateTime dateOrdered, string resellerID, string orderStatus)
         {
             OrderID = orderID;

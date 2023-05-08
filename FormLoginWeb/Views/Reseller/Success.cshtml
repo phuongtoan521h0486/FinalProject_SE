@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/_LayoutPage.cshtml";
+
+}
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Form</title>
+    <style>
+        /* center the form and set some basic styles */
+        form {
+            margin: 0 auto;
+            max-width: 500px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        /* style the product dropdown */
+        #product-dropdown {
+            display: block;
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        /* style the quantity textbox */
+        #quantity-textbox {
+            display: block;
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        /* style the price and total price labels */
+        .price-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .total-price-label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* style the add-to-cart button */
+        #add-to-cart-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            #add-to-cart-button:hover {
+                background-color: #0052a3;
+            }
+        /* style the cart gridview */
+        #cart-gridview {
+            margin: 0 auto;
+            max-width: 500px;
+            font-size: 16px;
+        }
+        /* style the payment method radio buttons */
+        #payment-method-radio {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        /* style the checkout button */
+        #checkout-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            #checkout-button:hover {
+                background-color: #0052a3;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align: center;">
+            <h2>Product Information</h2>
+            <br />
+            <label for="product-dropdown">Product:</label>
+            <<asp:GridView ID="product-gridview" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" />
+                    <!-- add more columns here as needed -->
+                </Columns>
+            </asp:GridView>
+            <br /><br />
+            <label for="quantity-textbox">Quantity:</label>
+            <asp:TextBox ID="quantity-textbox" runat="server"></asp:TextBox>
+            <br /><br />
+            <label for="price-label">Price:</label>
+            <asp:Label ID="price-label" runat="server" Text=""></asp:Label>
+            <br /><br />
+            <label for="total-price-label">Total Price:</label>
+            <asp:Label ID="total-price-label" runat="server" Text=""></asp:Label>
+            <br /><br />
+            <asp:Button ID="add-to-cart-button" runat="server" Text="Add to Cart" OnClick="add_to_cart_click" />
+        </div>
+        <br /><br />
+        <div>
+            <h2>Cart</h2>
+            <asp:GridView ID="cart-gridview" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField HeaderText="Product" DataField="ProductName" />
+                    <asp:BoundField HeaderText="Quantity" DataField="Quantity" />
+                    <asp:BoundField HeaderText="Price" DataField="Price" DataFormatString="{0:C}" />
+                </Columns>
+            </asp:GridView>
+        </div>
+        <br /><br />
+        <div>
+            <h2>Payment Method</h2>
+            <asp:RadioButtonList ID="payment-method-radio" runat="server">
+                <asp:ListItem Text="Credit Card" Value="credit-card"></asp:ListItem>
+                <asp:ListItem Text="PayPal" Value="paypal"></asp:ListItem>
+                <asp:ListItem Text="Bitcoin" Value="bitcoin"></asp:ListItem>
+            </asp:RadioButtonList>
+        </div>
+        <br /><br />
+        <asp:Button ID="checkout-button" runat="server" Text="Checkout" OnClick="checkout_click" />
+    </form>
+</body>
+</html>
+

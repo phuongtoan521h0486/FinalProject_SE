@@ -12,7 +12,7 @@ namespace FormLoginWeb.Controllers
 {
     public class ResellerController : Controller
     {
-        public static string strConn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString;
+        public static string strConn = ConfigurationManager.ConnectionStrings["MyConn"].ConnectionString.ToString();
         // GET: Reseller
         [HttpGet]
         public ActionResult Login()
@@ -20,6 +20,7 @@ namespace FormLoginWeb.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Verify(DTO_Reseller account)
         {
             using (var cn = new SqlConnection(strConn))
@@ -36,11 +37,14 @@ namespace FormLoginWeb.Controllers
                     {
                         if (dr.Read())
                         {
-
+                            return View("Success");
+                        }
+                        else
+                        {
+                            return View("Error");
                         }
                     }
                 }
-                return View();
             }
             
         }

@@ -22,6 +22,22 @@ namespace BUS
             orderItem = new DAL_OrderItem(orderID, productID, quantity, price);
         }
 
+        public BUS_Product BUS_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public BUS_Order BUS_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             orderItem.add();

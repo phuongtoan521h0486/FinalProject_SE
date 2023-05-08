@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Mobile_Phone_Distribution_Management_System_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accountant">
+          <Key>
+            <PropertyRef Name="AccountantID" />
+          </Key>
+          <Property Name="AccountantID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AccountantName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ContactInfo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeliveryNote">
+          <Key>
+            <PropertyRef Name="DeliveryNoteNumber" />
+          </Key>
+          <Property Name="DeliveryNoteNumber" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateDelivered" Type="date" Nullable="false" />
+          <Property Name="ResellerID" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeliveryNoteItem">
+          <Key>
+            <PropertyRef Name="DeliveryNoteNumber" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="DeliveryNoteNumber" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrderNumber" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateOrdered" Type="date" Nullable="false" />
+          <Property Name="ResellerID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="PaymentDate" Type="date" Nullable="false" />
+          <Property Name="PaymentStatus" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrderID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResellerID" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="SupplierID" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Reseller">
+          <Key>
+            <PropertyRef Name="ResellerID" />
+          </Key>
+          <Property Name="ResellerID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResellerName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ContactInfo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ContactInfo" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="WarehouseReceiptNumber" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="WarehouseReceiptNumber" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateReceived" Type="date" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DeliveryN__Deliv__3B75D760">
+          <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="1" />
+          <End Role="DeliveryNoteItem" Type="Self.DeliveryNoteItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryNote">
+              <PropertyRef Name="DeliveryNoteNumber" />
+            </Principal>
+            <Dependent Role="DeliveryNoteItem">
+              <PropertyRef Name="DeliveryNoteNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeliveryN__Produ__3C69FB99">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="DeliveryNoteItem" Type="Self.DeliveryNoteItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DeliveryNoteItem">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeliveryN__Resel__38996AB5">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="DeliveryNote">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ResellerI__2E1BDC42">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderItem__Order__30F848ED">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderItem__Produ__31EC6D26">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__OrderID__34C8D9D1">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__Reselle__35BCFE0A">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Produ__403A8C7D">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Warehouse">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Product">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Mobile_Phone_Distribution_Management_System_DBModelStoreContainer">
+          <EntitySet Name="Accountant" EntityType="Self.Accountant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryNote" EntityType="Self.DeliveryNote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryNoteItem" EntityType="Self.DeliveryNoteItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reseller" EntityType="Self.Reseller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DeliveryN__Deliv__3B75D760" Association="Self.FK__DeliveryN__Deliv__3B75D760">
+            <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+            <End Role="DeliveryNoteItem" EntitySet="DeliveryNoteItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeliveryN__Produ__3C69FB99" Association="Self.FK__DeliveryN__Produ__3C69FB99">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="DeliveryNoteItem" EntitySet="DeliveryNoteItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeliveryN__Resel__38996AB5" Association="Self.FK__DeliveryN__Resel__38996AB5">
+            <End Role="Reseller" EntitySet="Reseller" />
+            <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ResellerI__2E1BDC42" Association="Self.FK__Order__ResellerI__2E1BDC42">
+            <End Role="Reseller" EntitySet="Reseller" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderItem__Order__30F848ED" Association="Self.FK__OrderItem__Order__30F848ED">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderItem__Produ__31EC6D26" Association="Self.FK__OrderItem__Produ__31EC6D26">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__OrderID__34C8D9D1" Association="Self.FK__Payment__OrderID__34C8D9D1">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__Reselle__35BCFE0A" Association="Self.FK__Payment__Reselle__35BCFE0A">
+            <End Role="Reseller" EntitySet="Reseller" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Produ__403A8C7D" Association="Self.FK__Warehouse__Produ__403A8C7D">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Warehouse" EntitySet="Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Product" Association="Self.FK_Supplier_Product">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Mobile_Phone_Distribution_Management_System_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accountant">
+          <Key>
+            <PropertyRef Name="AccountantID" />
+          </Key>
+          <Property Name="AccountantID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountantName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeliveryNote">
+          <Key>
+            <PropertyRef Name="DeliveryNoteNumber" />
+          </Key>
+          <Property Name="DeliveryNoteNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateDelivered" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ResellerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DeliveryNoteItems" Relationship="Self.FK__DeliveryN__Deliv__3B75D760" FromRole="DeliveryNote" ToRole="DeliveryNoteItem" />
+          <NavigationProperty Name="Reseller" Relationship="Self.FK__DeliveryN__Resel__38996AB5" FromRole="DeliveryNote" ToRole="Reseller" />
+        </EntityType>
+        <EntityType Name="DeliveryNoteItem">
+          <Key>
+            <PropertyRef Name="DeliveryNoteNumber" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="DeliveryNoteNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DeliveryNote" Relationship="Self.FK__DeliveryN__Deliv__3B75D760" FromRole="DeliveryNoteItem" ToRole="DeliveryNote" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__DeliveryN__Produ__3C69FB99" FromRole="DeliveryNoteItem" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOrdered" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ResellerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reseller" Relationship="Self.FK__Order__ResellerI__2E1BDC42" FromRole="Order" ToRole="Reseller" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__Order__30F848ED" FromRole="Order" ToRole="OrderItem" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__OrderID__34C8D9D1" FromRole="Order" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__OrderItem__Order__30F848ED" FromRole="OrderItem" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__OrderItem__Produ__31EC6D26" FromRole="OrderItem" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PaymentStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResellerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Payment__OrderID__34C8D9D1" FromRole="Payment" ToRole="Order" />
+          <NavigationProperty Name="Reseller" Relationship="Self.FK__Payment__Reselle__35BCFE0A" FromRole="Payment" ToRole="Reseller" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="SupplierID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DeliveryNoteItems" Relationship="Self.FK__DeliveryN__Produ__3C69FB99" FromRole="Product" ToRole="DeliveryNoteItem" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__Produ__31EC6D26" FromRole="Product" ToRole="OrderItem" />
+          <NavigationProperty Name="Warehouses" Relationship="Self.FK__Warehouse__Produ__403A8C7D" FromRole="Product" ToRole="Warehouse" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_Supplier_Product" FromRole="Product" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Reseller">
+          <Key>
+            <PropertyRef Name="ResellerID" />
+          </Key>
+          <Property Name="ResellerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResellerName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DeliveryNotes" Relationship="Self.FK__DeliveryN__Resel__38996AB5" FromRole="Reseller" ToRole="DeliveryNote" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Order__ResellerI__2E1BDC42" FromRole="Reseller" ToRole="Order" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__Reselle__35BCFE0A" FromRole="Reseller" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Supplier_Product" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="WarehouseReceiptNumber" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="WarehouseReceiptNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateReceived" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ProductID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Warehouse__Produ__403A8C7D" FromRole="Warehouse" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__DeliveryN__Deliv__3B75D760">
+          <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="1" />
+          <End Role="DeliveryNoteItem" Type="Self.DeliveryNoteItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryNote">
+              <PropertyRef Name="DeliveryNoteNumber" />
+            </Principal>
+            <Dependent Role="DeliveryNoteItem">
+              <PropertyRef Name="DeliveryNoteNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeliveryN__Resel__38996AB5">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="DeliveryNote">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DeliveryN__Produ__3C69FB99">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="DeliveryNoteItem" Type="Self.DeliveryNoteItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DeliveryNoteItem">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ResellerI__2E1BDC42">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderItem__Order__30F848ED">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__OrderID__34C8D9D1">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderItem__Produ__31EC6D26">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__Reselle__35BCFE0A">
+          <End Role="Reseller" Type="Self.Reseller" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reseller">
+              <PropertyRef Name="ResellerID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="ResellerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Produ__403A8C7D">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Warehouse">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Supplier_Product">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyConn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accountants" EntityType="Self.Accountant" />
+          <EntitySet Name="DeliveryNotes" EntityType="Self.DeliveryNote" />
+          <EntitySet Name="DeliveryNoteItems" EntityType="Self.DeliveryNoteItem" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Resellers" EntityType="Self.Reseller" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
+          <AssociationSet Name="FK__DeliveryN__Deliv__3B75D760" Association="Self.FK__DeliveryN__Deliv__3B75D760">
+            <End Role="DeliveryNote" EntitySet="DeliveryNotes" />
+            <End Role="DeliveryNoteItem" EntitySet="DeliveryNoteItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeliveryN__Resel__38996AB5" Association="Self.FK__DeliveryN__Resel__38996AB5">
+            <End Role="Reseller" EntitySet="Resellers" />
+            <End Role="DeliveryNote" EntitySet="DeliveryNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DeliveryN__Produ__3C69FB99" Association="Self.FK__DeliveryN__Produ__3C69FB99">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="DeliveryNoteItem" EntitySet="DeliveryNoteItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ResellerI__2E1BDC42" Association="Self.FK__Order__ResellerI__2E1BDC42">
+            <End Role="Reseller" EntitySet="Resellers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderItem__Order__30F848ED" Association="Self.FK__OrderItem__Order__30F848ED">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__OrderID__34C8D9D1" Association="Self.FK__Payment__OrderID__34C8D9D1">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderItem__Produ__31EC6D26" Association="Self.FK__OrderItem__Produ__31EC6D26">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__Reselle__35BCFE0A" Association="Self.FK__Payment__Reselle__35BCFE0A">
+            <End Role="Reseller" EntitySet="Resellers" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Produ__403A8C7D" Association="Self.FK__Warehouse__Produ__403A8C7D">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Warehouse" EntitySet="Warehouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Supplier_Product" Association="Self.FK_Supplier_Product">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Mobile_Phone_Distribution_Management_System_DBModelStoreContainer" CdmEntityContainer="MyConn">
+          <EntitySetMapping Name="Accountants">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Accountant">
+              <MappingFragment StoreEntitySet="Accountant">
+                <ScalarProperty Name="AccountantID" ColumnName="AccountantID" />
+                <ScalarProperty Name="AccountantName" ColumnName="AccountantName" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryNotes">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.DeliveryNote">
+              <MappingFragment StoreEntitySet="DeliveryNote">
+                <ScalarProperty Name="DeliveryNoteNumber" ColumnName="DeliveryNoteNumber" />
+                <ScalarProperty Name="DateDelivered" ColumnName="DateDelivered" />
+                <ScalarProperty Name="ResellerID" ColumnName="ResellerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryNoteItems">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.DeliveryNoteItem">
+              <MappingFragment StoreEntitySet="DeliveryNoteItem">
+                <ScalarProperty Name="DeliveryNoteNumber" ColumnName="DeliveryNoteNumber" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="DateOrdered" ColumnName="DateOrdered" />
+                <ScalarProperty Name="ResellerID" ColumnName="ResellerID" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.OrderItem">
+              <MappingFragment StoreEntitySet="OrderItem">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ResellerID" ColumnName="ResellerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resellers">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Reseller">
+              <MappingFragment StoreEntitySet="Reseller">
+                <ScalarProperty Name="ResellerID" ColumnName="ResellerID" />
+                <ScalarProperty Name="ResellerName" ColumnName="ResellerName" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouses">
+            <EntityTypeMapping TypeName="Mobile_Phone_Distribution_Management_System_DBModel.Warehouse">
+              <MappingFragment StoreEntitySet="Warehouse">
+                <ScalarProperty Name="WarehouseReceiptNumber" ColumnName="WarehouseReceiptNumber" />
+                <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

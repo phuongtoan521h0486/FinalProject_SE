@@ -11,6 +11,23 @@ namespace DTO
         public string DeliveryNoteNumber { get; set; }
         public string ProductID { get; set; }
         public int Quantity { get; set; }
+
+        public DTO_DeliveryNote DTO_DeliveryNote
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DTO_Product DTO_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_DeliveryNoteItem(string deliveryNoteNumber, string productID, int quantity)
         {
             DeliveryNoteNumber = deliveryNoteNumber;

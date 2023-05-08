@@ -56,10 +56,10 @@ namespace Mobile_Phone_Distribution_Management_System
             importGoods.LoadListProducts(supplierID);
             dataGridViewShopping.DataSource = importGoods.listProducts;
 
-            if (!dataGridViewShopping.Columns.Contains("columnQuantity"))
+            if (!dataGridViewShopping.Columns.Contains("Quantity"))
             {
-                dataGridViewShopping.Columns.Add("columnQuantity", "Quantity");
-                dataGridViewShopping.Columns["columnQuantity"].ValueType = typeof(int);
+                dataGridViewShopping.Columns.Add("Quantity", "Quantity");
+                dataGridViewShopping.Columns["Quantity"].ValueType = typeof(int);
             }
 
             if (!dataGridViewShopping.Columns.Contains("ButtonColumn"))
@@ -102,9 +102,9 @@ namespace Mobile_Phone_Distribution_Management_System
             if (e.ColumnIndex == dataGridViewShopping.Columns["ButtonColumn"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridViewShopping.Rows[e.RowIndex];
-                if (row.Cells[2].Value == null || row.Cells[2].Value.ToString() == "0")
+                if (row.Cells["Quantity"].Value == null || row.Cells["Quantity"].Value.ToString() == "0")
                 {
-                    row.Cells[2].Value = 0;
+                    row.Cells["Quantity"].Value = 0;
                     labelInform.Visible = true;
                     labelInform.ForeColor = Color.Red;
                     labelInform.Text = "Please Enter Quantity";
@@ -115,9 +115,9 @@ namespace Mobile_Phone_Distribution_Management_System
                     labelInform.ForeColor = Color.Lime;
                     labelInform.Text = string.Format("Add success {0} x {1} to cart", row.Cells[0].Value.ToString(), row.Cells[2].Value.ToString());
 
-                    addToCart(row.Cells[0].Value.ToString(), (decimal)row.Cells[1].Value, (int)row.Cells[2].Value);
+                    addToCart(row.Cells["ProductName"].Value.ToString(), (decimal)row.Cells["Price"].Value, (int)row.Cells["Quantity"].Value);
 
-                    row.Cells[2].Value = 0;
+                    row.Cells["Quantity"].Value = 0;
                 }
                 
             }
@@ -186,7 +186,7 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void dataGridViewShopping_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridViewShopping.Columns[e.ColumnIndex].Name == "columnQuantity")
+            if (dataGridViewShopping.Columns[e.ColumnIndex].Name == "Quantity")
             {
                 if (e.Value == null || string.IsNullOrWhiteSpace(e.Value.ToString()))
                 {
@@ -198,7 +198,7 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void dataGridViewShopping_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (dataGridViewShopping.CurrentCell.ColumnIndex == dataGridViewShopping.Columns["columnQuantity"].Index)
+            if (dataGridViewShopping.CurrentCell.ColumnIndex == dataGridViewShopping.Columns["Quantity"].Index)
             {
                 DataGridViewTextBoxEditingControl tb = e.Control as DataGridViewTextBoxEditingControl;
 

@@ -11,6 +11,15 @@ namespace DTO
         public string SupplierID { get; set; }
         public string SupplierName { get; set; }
         public string ContactInfo { get; set; }
+
+        public DTO_Product DTO_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_Supplier(string supplierID, string supplierName, string contactInfo)
         {
             SupplierID = supplierID;

@@ -32,12 +32,6 @@ namespace Mobile_Phone_Distribution_Management_System
             this.components = new System.ComponentModel.Container();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageProducts = new System.Windows.Forms.TabPage();
-            this.dataGridViewShopping = new System.Windows.Forms.DataGridView();
-            this.tabPageCart = new System.Windows.Forms.TabPage();
-            this.dataGridViewCart = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxInformation = new System.Windows.Forms.GroupBox();
             this.labelInform = new System.Windows.Forms.Label();
             this.comboBoxSupplierList = new System.Windows.Forms.ComboBox();
@@ -50,15 +44,20 @@ namespace Mobile_Phone_Distribution_Management_System
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.tabPageCart = new System.Windows.Forms.TabPage();
+            this.dataGridViewCart = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.dataGridViewShopping = new System.Windows.Forms.DataGridView();
+            this.tabPageProducts = new System.Windows.Forms.TabPage();
             this.panelBackground.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPageProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShopping)).BeginInit();
-            this.tabPageCart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).BeginInit();
             this.groupBoxInformation.SuspendLayout();
             this.panelCalendar.SuspendLayout();
+            this.tabPageCart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShopping)).BeginInit();
+            this.tabPageProducts.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -85,75 +84,6 @@ namespace Mobile_Phone_Distribution_Management_System
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 538);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPageProducts);
-            this.tabControl1.Controls.Add(this.tabPageCart);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 191);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(942, 344);
-            this.tabControl1.TabIndex = 1;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabPageProducts
-            // 
-            this.tabPageProducts.Controls.Add(this.dataGridViewShopping);
-            this.tabPageProducts.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProducts.Name = "tabPageProducts";
-            this.tabPageProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProducts.Size = new System.Drawing.Size(934, 318);
-            this.tabPageProducts.TabIndex = 0;
-            this.tabPageProducts.Text = "Products";
-            this.tabPageProducts.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewShopping
-            // 
-            this.dataGridViewShopping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewShopping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShopping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewShopping.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewShopping.Name = "dataGridViewShopping";
-            this.dataGridViewShopping.Size = new System.Drawing.Size(928, 312);
-            this.dataGridViewShopping.TabIndex = 0;
-            this.dataGridViewShopping.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShopping_CellContentClick);
-            this.dataGridViewShopping.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewShopping_CellFormatting);
-            this.dataGridViewShopping.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewShopping_EditingControlShowing);
-            // 
-            // tabPageCart
-            // 
-            this.tabPageCart.Controls.Add(this.dataGridViewCart);
-            this.tabPageCart.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCart.Name = "tabPageCart";
-            this.tabPageCart.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCart.Size = new System.Drawing.Size(934, 318);
-            this.tabPageCart.TabIndex = 1;
-            this.tabPageCart.Text = "Cart";
-            this.tabPageCart.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewCart
-            // 
-            this.dataGridViewCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewCart.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewCart.Name = "dataGridViewCart";
-            this.dataGridViewCart.Size = new System.Drawing.Size(928, 312);
-            this.dataGridViewCart.TabIndex = 0;
-            this.dataGridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellContentClick);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(934, 318);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBoxInformation
             // 
@@ -287,6 +217,64 @@ namespace Mobile_Phone_Distribution_Management_System
             this.timerClock.Enabled = true;
             this.timerClock.Tick += new System.EventHandler(this.timerclock_Tick);
             // 
+            // tabPageCart
+            // 
+            this.tabPageCart.Controls.Add(this.dataGridViewCart);
+            this.tabPageCart.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCart.Name = "tabPageCart";
+            this.tabPageCart.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCart.Size = new System.Drawing.Size(934, 318);
+            this.tabPageCart.TabIndex = 1;
+            this.tabPageCart.Text = "Cart";
+            this.tabPageCart.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCart
+            // 
+            this.dataGridViewCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCart.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewCart.Name = "dataGridViewCart";
+            this.dataGridViewCart.Size = new System.Drawing.Size(928, 312);
+            this.dataGridViewCart.TabIndex = 0;
+            this.dataGridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellContentClick);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPageProducts);
+            this.tabControl1.Controls.Add(this.tabPageCart);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 191);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(942, 344);
+            this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // dataGridViewShopping
+            // 
+            this.dataGridViewShopping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewShopping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewShopping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewShopping.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewShopping.Name = "dataGridViewShopping";
+            this.dataGridViewShopping.Size = new System.Drawing.Size(928, 312);
+            this.dataGridViewShopping.TabIndex = 0;
+            this.dataGridViewShopping.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShopping_CellContentClick);
+            this.dataGridViewShopping.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewShopping_CellFormatting);
+            this.dataGridViewShopping.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewShopping_EditingControlShowing);
+            // 
+            // tabPageProducts
+            // 
+            this.tabPageProducts.Controls.Add(this.dataGridViewShopping);
+            this.tabPageProducts.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProducts.Name = "tabPageProducts";
+            this.tabPageProducts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProducts.Size = new System.Drawing.Size(934, 318);
+            this.tabPageProducts.TabIndex = 0;
+            this.tabPageProducts.Text = "Products";
+            this.tabPageProducts.UseVisualStyleBackColor = true;
+            // 
             // FormImportGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,14 +288,14 @@ namespace Mobile_Phone_Distribution_Management_System
             this.Load += new System.EventHandler(this.FormImportGoods_Load);
             this.panelBackground.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageProducts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShopping)).EndInit();
-            this.tabPageCart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).EndInit();
             this.groupBoxInformation.ResumeLayout(false);
             this.groupBoxInformation.PerformLayout();
             this.panelCalendar.ResumeLayout(false);
+            this.tabPageCart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShopping)).EndInit();
+            this.tabPageProducts.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -315,24 +303,23 @@ namespace Mobile_Phone_Distribution_Management_System
         #endregion
 
         private System.Windows.Forms.Panel panelBackground;
-        private System.Windows.Forms.DataGridView dataGridViewShopping;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageProducts;
-        private System.Windows.Forms.TabPage tabPageCart;
         private System.Windows.Forms.GroupBox groupBoxInformation;
         private System.Windows.Forms.Panel panelCalendar;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timerClock;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox comboBoxSupplierList;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelAccountantName;
-        private System.Windows.Forms.DataGridView dataGridViewCart;
         private System.Windows.Forms.Label labelInform;
         private System.Windows.Forms.Label labelTotalMoney;
         private System.Windows.Forms.Button buttonCreateGoodsReceived;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPageProducts;
+        private System.Windows.Forms.DataGridView dataGridViewShopping;
+        private System.Windows.Forms.TabPage tabPageCart;
+        private System.Windows.Forms.DataGridView dataGridViewCart;
     }
 }

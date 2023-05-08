@@ -1,0 +1,189 @@
+﻿@model IEnumerable<WebForm.Models.Product>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    #success-message {
+        display: none;
+        color: white;
+        background-color: green;
+        border: 1px solid green;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2>Order Products</h2>
+<div id="success-message" style="display: none;"></div>
+<button class="btn btn-primary" onclick="toggleTable()">Show/Hide Product</button>
+<table class="table" id="product-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+        <th>
+            @Html.DisplayName("Action")
+        </th>
+        <th>
+            @Html.DisplayName("Add to cart")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
+            </td>
+            <td>
+                @Html.TextBox("Quantity", null, new { id = "Quantity_" + item.ProductID })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID })@* |*@
+            </td>
+            <td>
+                <button class="btn btn-primary" onclick="addToCart('@item.ProductName', '@item.Price', '@item.ProductID')">Add to cart</button>
+            </td>
+        </tr>
+    }
+    <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+
+</table>
+<div id="cart-table" >
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total</td>
+                <td id="cart-total"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<script>
+    var cart = [];
+
+    function addToCart(productName, price, productId) {
+        var quantity = parseInt(document.getElementById("Quantity_" + productId).value);
+        document.getElementById("Quantity_" + productId).value = "";
+
+        for (var i = 0; i < cart.length; i++) {
+            if (cart[i].productId === productId) {
+                cart[i].quantity += quantity;
+                cart[i].totalPrice = cart[i].price * cart[i].quantity;
+                updateCartTable();
+                var message = "Adding success: " + quantity + " x " + productName;
+                console.log(message);
+
+                var successMessage = document.getElementById("success-message");
+                successMessage.textContent = message;
+                successMessage.style.display = "inline-block";
+                return;
+            }
+        }
+
+        var item = {
+            productName: productName,
+            price: price,
+            quantity: quantity,
+            productId: productId,
+            totalPrice: price * quantity
+        };
+
+        cart.push(item);
+        updateCartTable();
+        var message = "Adding success: " + quantity + " x " + productName;
+        console.log(message);
+
+        var successMessage = document.getElementById("success-message");
+        successMessage.textContent = message;
+        successMessage.style.display = "inline-block";
+    }
+
+    function toggleTable() {
+        var table = document.getElementById("product-table");
+        if (table.style.display === "none") {
+            table.style.display = "table";
+        } else {
+            table.style.display = "none";
+        }
+    }
+
+    function updateCartTable() {
+        var cartBody = document.getElementById("cart-body");
+        cartBody.innerHTML = "";
+
+        var total = 0;
+
+        for (var i = 0; i < cart.length; i++) {
+            var row = cartBody.insertRow();
+            var nameCell = row.insertCell(0);
+            var priceCell = row.insertCell(1);
+            var quantityCell = row.insertCell(2);
+            var totalCell = row.insertCell(3);
+
+            nameCell.innerHTML = cart[i].productName;
+            priceCell.innerHTML = cart[i].price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            quantityCell.innerHTML = cart[i].quantity;
+            var totalPrice = cart[i].price * cart[i].quantity;
+            totalCell.innerHTML = totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+            total += totalPrice;
+        }
+
+        document.getElementById("cart-total").innerHTML = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    }
+
+    function checkout() {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        var total = 0;
+
+        for (var i = 0; i < cart.length; i++) {
+            var totalPrice = cart[i].price * cart[i].quantity;
+            total += totalPrice;
+        }
+
+        var message = "Thank you for your purchase! Your total is " + total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        console.log(message);
+
+        cart = [];
+        updateCartTable();
+
+        var successMessage = document.getElementById("success-message");
+        successMessage.textContent = message;
+        successMessage.style.display = "inline-block";
+    }
+
+</script>

@@ -22,6 +22,22 @@ namespace BUS
             payment = new DAL_Payment(paymentID, amount, paymentDate, paymentStatus, orderID, resellerID);
         }
 
+        public BUS_Order BUS_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public BUS_Reseller BUS_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             payment.add();

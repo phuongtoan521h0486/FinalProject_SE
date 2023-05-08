@@ -22,6 +22,14 @@ namespace BUS
             order = new DAL_Order(orderID, orderNumber, dateOrdered, resellerID, orderStatus);
         }
 
+        public BUS_Reseller BUS_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             order.add();

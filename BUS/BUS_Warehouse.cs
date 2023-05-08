@@ -22,6 +22,14 @@ namespace BUS
             warehouse = new DAL_Warehouse(warehouseReceiptNumber, dateReceived, productID, quantity);
         }
 
+        public BUS_Product BUS_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             warehouse.add();

@@ -26,6 +26,15 @@ namespace BUS
         public int NumOrders { get; set; }
         public decimal TotalRevenue { get; set; }
         public decimal TotalProfit { get; set; }
+
+        public RevenueByDate RevenueByDate
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public BUS_Dashboard() { }
         private void GetNumberItems()
         {

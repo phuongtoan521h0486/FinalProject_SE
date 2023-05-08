@@ -14,6 +14,23 @@ namespace DTO
         public string PaymentStatus { get; set; }
         public string OrderID { get; set; }
         public string ResellerID { get; set; }
+
+        public DTO_Reseller DTO_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DTO_Order DTO_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_Payment(string paymentID, decimal amount, DateTime paymentDate, string paymentStatus, string orderID, string resellerID)
         {
             PaymentID = paymentID;

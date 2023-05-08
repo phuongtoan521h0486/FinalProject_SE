@@ -20,6 +20,14 @@ namespace DAL
             deliveryNote = new DTO_DeliveryNote(deliveryNoteNumber, dateDelivered, resellerID);
         }
 
+        public DAL_Reseller DAL_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO DeliveryNote VALUES('{0}', '{1:yyyy-MM-dd}', '{2}')",

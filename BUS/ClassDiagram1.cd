@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BUS.BUS_Warehouse">
+    <Position X="5.5" Y="12.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAQAABAACAAAAgGAAA=</HashCode>
+      <FileName>BUS_Warehouse.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_Supplier">
+    <Position X="9.5" Y="12.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACIAQAAAAAAAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.BUS_Reseller">
+    <Position X="5.75" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAQAgAAAAAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Reseller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.BUS_Product">
+    <Position X="5.75" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAgAAAAAAAQAAAQAAAAAAAAJAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Supplier" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_Payment">
+    <Position X="3" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAQCAAEAAAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Payment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Order" />
+      <Property Name="BUS_Reseller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_Order">
+    <Position X="2" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAABAAAAAAAAAACAAQAAAAAAAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Reseller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_OrderItem">
+    <Position X="2.25" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAQAAAEAQAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_OrderItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Product" />
+      <Property Name="BUS_Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_DeliveryNoteItem">
+    <Position X="9.5" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAQAAAAAQAABQAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_DeliveryNoteItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Product" />
+      <Property Name="BUS_DeliveryNote" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_DeliveryNote">
+    <Position X="9.5" Y="6" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAgAAAAAAEQAAAAAAAABAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_DeliveryNote.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BUS_Reseller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_Accountant">
+    <Position X="2.25" Y="12" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAAAAAACBAAAAAAAAGAAA=</HashCode>
+      <FileName>BUS_Accountant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.BUS_Dashboard">
+    <Position X="12.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAAAIgREAACAAAAAQAhAAAABAAACAAIIAQAA=</HashCode>
+      <FileName>BUS_Dashboard.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RevenueByDate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BUS.BUS_ImportGoods">
+    <Position X="12.5" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAgAAAAAAAAAAAAAAEggAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BUS_ImportGoods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="BUS.RevenueByDate">
+    <Position X="16" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>BUS_Dashboard.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

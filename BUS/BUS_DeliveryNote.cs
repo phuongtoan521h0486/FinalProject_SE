@@ -21,6 +21,14 @@ namespace BUS
             deliveryNote = new DAL_DeliveryNote(deliveryNoteNumber, dateDelivered, resellerID);
         }
 
+        public BUS_Reseller BUS_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             deliveryNote.add();

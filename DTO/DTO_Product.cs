@@ -12,6 +12,7 @@ namespace DTO
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public string SupplierID { get; set; }
+
         public DTO_Product(string productID, string productName, decimal price, string supplierID)
         {
             ProductID = productID;

@@ -12,6 +12,15 @@ namespace DTO
         public DateTime DateReceived { get; set; }
         public string ProductID { get; set; }
         public int Quantity { get; set; }
+
+        public DTO_Product DTO_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_Warehouse(string warehouseReceiptNumber, DateTime dateReceived, string productID, int quantity)
         {
             WarehouseReceiptNumber = warehouseReceiptNumber;

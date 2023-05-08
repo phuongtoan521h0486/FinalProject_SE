@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DTO.DTO_Warehouse">
+    <Position X="5.25" Y="9.5" Width="1.5" />
+    <AssociationLine Name="DTO_Product" Type="DTO.DTO_Product">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.051" Y="0.345" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAACgAAAAAAAAIAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DTO_Warehouse.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_Supplier">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <AssociationLine Name="DTO_Product" Type="DTO.DTO_Product" ManuallyRouted="true">
+      <Path>
+        <Point X="7.5" Y="9.72" />
+        <Point X="7.129" Y="9.72" />
+        <Point X="7.129" Y="9.25" />
+        <Point X="6.406" Y="9.25" />
+        <Point X="6.406" Y="8.632" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.061" Y="0.178" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAKAAAAAAAAA=</HashCode>
+      <FileName>DTO_Supplier.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_Reseller">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAQAgAAIAAAAAAIACAAAAAAAAAAA=</HashCode>
+      <FileName>DTO_Reseller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTO.DTO_Product">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAA=</HashCode>
+      <FileName>DTO_Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DTO.DTO_Payment">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAAAEAAAAAAAAAEACAAAAAAJAAAAAAAAAAAQA=</HashCode>
+      <FileName>DTO_Payment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Reseller" />
+      <Property Name="DTO_Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_OrderItem">
+    <Position X="2" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAABAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DTO_OrderItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Order" />
+      <Property Name="DTO_Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_Order">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAAgQA=</HashCode>
+      <FileName>DTO_Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Reseller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_DeliveryNoteItem">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAAAgAAAAAAAAQAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DTO_DeliveryNoteItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_DeliveryNote" />
+      <Property Name="DTO_Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_DeliveryNote">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAQA=</HashCode>
+      <FileName>DTO_DeliveryNote.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DTO_Reseller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DTO.DTO_Accountant">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhAAAAAAAAAAQAAAAIAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DTO_Accountant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

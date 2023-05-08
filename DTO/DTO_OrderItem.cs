@@ -12,6 +12,23 @@ namespace DTO
         public string ProductID { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
+
+        public DTO_Order DTO_Order
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public DTO_Product DTO_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DTO_OrderItem(string orderID, string productID, int quantity, decimal price)
         {
             OrderID = orderID;

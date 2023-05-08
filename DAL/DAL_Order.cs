@@ -20,6 +20,14 @@ namespace DAL
             order = new DTO_Order(orderID, orderNumber, dateOrdered, resellerID, orderStatus);
         }
 
+        public DAL_Reseller DAL_Reseller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO [Order] VALUES('{0}', '{1}', '{2:yyyy-MM-dd}', '{3}', '{4}')",

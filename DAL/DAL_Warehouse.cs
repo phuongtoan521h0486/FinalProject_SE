@@ -20,6 +20,14 @@ namespace DAL
             warehouse = new DTO_Warehouse(warehouseReceiptNumber, dateReceived, productID, quantity);
         }
 
+        public DAL_Product DAL_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             string sql = string.Format("INSERT INTO Warehouse VALUES('{0}', '{1:yyyy-MM-dd}', '{2}', {3})",

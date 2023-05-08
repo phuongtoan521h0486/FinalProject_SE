@@ -22,6 +22,22 @@ namespace BUS
             deliveryNoteItem = new DAL_DeliveryNoteItem(deliveryNoteNumber, productID, quantity);
         }
 
+        public BUS_Product BUS_Product
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public BUS_DeliveryNote BUS_DeliveryNote
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void add()
         {
             deliveryNoteItem.add();

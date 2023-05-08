@@ -28,9 +28,9 @@ namespace Mobile_Phone_Distribution_Management_System
         private void MainGUI_Load(object sender, EventArgs e)
         {
             Form formLogin = new FormLogin();
-            Form formDashboard = new FormDashboard();
             Form formImportGoods = new FormImportGoods();
-            //formImportGoods.ShowDialog();
+            Form formDelivery = new FormDelivery();
+            formDelivery.ShowDialog();
             //formLogin.ShowDialog();
             //labelFullName.Text = FormLogin.fullName;
         }
