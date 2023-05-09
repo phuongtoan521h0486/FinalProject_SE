@@ -18,6 +18,8 @@ namespace Mobile_Phone_Distribution_Management_System
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         Form currentForm;
+        Form formLogin;
+        bool isAdmin = false;
         public MainGUI()
         {
             InitializeComponent();
@@ -27,10 +29,17 @@ namespace Mobile_Phone_Distribution_Management_System
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-            Form formLogin = new FormLogin();
+            formLogin = new FormLogin();
             Form formImportGoods = new FormImportGoods();
-            //formLogin.ShowDialog();
-            //labelFullName.Text = FormLogin.fullName;
+            formLogin.ShowDialog();
+            labelFullName.Text = "Hello " + FormLogin.fullName;
+            isAdmin = FormLogin.isAdmin;
+            if (!isAdmin)
+            {
+                buttonDashBoard.Hide();
+                buttonImportGoods.Hide();
+            }
+            buttonOrders.Hide();
         }
         private void hideSubMenu()
         {
@@ -143,6 +152,11 @@ namespace Mobile_Phone_Distribution_Management_System
             buttonCloseCurrentForm.Visible = true;
 
             hideSubMenu(); 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

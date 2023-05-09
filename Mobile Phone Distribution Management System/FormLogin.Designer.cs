@@ -36,7 +36,10 @@ namespace Mobile_Phone_Distribution_Management_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.linkLabelToan = new System.Windows.Forms.LinkLabel();
             this.labelErrorMessage = new System.Windows.Forms.Label();
             this.buttonForgetPass = new System.Windows.Forms.Button();
@@ -45,28 +48,25 @@ namespace Mobile_Phone_Distribution_Management_System
             this.label7 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panelPass = new System.Windows.Forms.Panel();
+            this.pictureBoxEye = new System.Windows.Forms.PictureBox();
             this.labelErrorPass = new System.Windows.Forms.Label();
             this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNotEye = new System.Windows.Forms.PictureBox();
             this.panelUser = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelErrorUser = new System.Windows.Forms.Label();
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.pictureBoxEye = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNotEye = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelPass.SuspendLayout();
-            this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotEye)).BeginInit();
+            this.panelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +139,16 @@ namespace Mobile_Phone_Distribution_Management_System
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to the";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.logoWhiteVer1;
+            this.pictureBox1.Location = new System.Drawing.Point(95, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.buttonMinimize);
@@ -158,6 +168,34 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 530);
             this.panel2.TabIndex = 1;
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.minimize_black2;
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonMinimize.Location = new System.Drawing.Point(410, 0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(20, 20);
+            this.buttonMinimize.TabIndex = 6;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.exit_black3;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonExit.Location = new System.Drawing.Point(430, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(20, 20);
+            this.buttonExit.TabIndex = 7;
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // linkLabelToan
             // 
@@ -254,6 +292,19 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panelPass.Size = new System.Drawing.Size(450, 45);
             this.panelPass.TabIndex = 1;
             // 
+            // pictureBoxEye
+            // 
+            this.pictureBoxEye.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.eye;
+            this.pictureBoxEye.Location = new System.Drawing.Point(422, 11);
+            this.pictureBoxEye.Name = "pictureBoxEye";
+            this.pictureBoxEye.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEye.TabIndex = 0;
+            this.pictureBoxEye.TabStop = false;
+            this.pictureBoxEye.Visible = false;
+            this.pictureBoxEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxEye_MouseDown);
+            this.pictureBoxEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxEye_MouseUp);
+            // 
             // labelErrorPass
             // 
             this.labelErrorPass.AutoSize = true;
@@ -280,6 +331,27 @@ namespace Mobile_Phone_Distribution_Management_System
             this.textBoxPass.Click += new System.EventHandler(this.textBoxPass_Click);
             this.textBoxPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPass_KeyPress);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.password1;
+            this.pictureBox3.Location = new System.Drawing.Point(15, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBoxNotEye
+            // 
+            this.pictureBoxNotEye.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.not_eye;
+            this.pictureBoxNotEye.Location = new System.Drawing.Point(422, 11);
+            this.pictureBoxNotEye.Name = "pictureBoxNotEye";
+            this.pictureBoxNotEye.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxNotEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNotEye.TabIndex = 0;
+            this.pictureBoxNotEye.TabStop = false;
+            this.pictureBoxNotEye.Visible = false;
+            // 
             // panelUser
             // 
             this.panelUser.BackColor = System.Drawing.Color.White;
@@ -290,6 +362,16 @@ namespace Mobile_Phone_Distribution_Management_System
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(450, 45);
             this.panelUser.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.user1;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // labelErrorUser
             // 
@@ -325,88 +407,6 @@ namespace Mobile_Phone_Distribution_Management_System
             this.label6.TabIndex = 1;
             this.label6.Text = "Account Login";
             // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.minimize_black2;
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonMinimize.Location = new System.Drawing.Point(410, 0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(20, 20);
-            this.buttonMinimize.TabIndex = 6;
-            this.buttonMinimize.UseVisualStyleBackColor = true;
-            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.BackgroundImage = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.exit_black3;
-            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonExit.Location = new System.Drawing.Point(430, 0);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(20, 20);
-            this.buttonExit.TabIndex = 7;
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // pictureBoxEye
-            // 
-            this.pictureBoxEye.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.eye;
-            this.pictureBoxEye.Location = new System.Drawing.Point(422, 11);
-            this.pictureBoxEye.Name = "pictureBoxEye";
-            this.pictureBoxEye.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEye.TabIndex = 0;
-            this.pictureBoxEye.TabStop = false;
-            this.pictureBoxEye.Visible = false;
-            this.pictureBoxEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxEye_MouseDown);
-            this.pictureBoxEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxEye_MouseUp);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.password1;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBoxNotEye
-            // 
-            this.pictureBoxNotEye.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.not_eye;
-            this.pictureBoxNotEye.Location = new System.Drawing.Point(422, 11);
-            this.pictureBoxNotEye.Name = "pictureBoxNotEye";
-            this.pictureBoxNotEye.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxNotEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNotEye.TabIndex = 0;
-            this.pictureBoxNotEye.TabStop = false;
-            this.pictureBoxNotEye.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.user1;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Mobile_Phone_Distribution_Management_System.Properties.Resources.logoWhiteVer1;
-            this.pictureBox1.Location = new System.Drawing.Point(95, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,19 +420,20 @@ namespace Mobile_Phone_Distribution_Management_System
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelPass.ResumeLayout(false);
             this.panelPass.PerformLayout();
-            this.panelUser.ResumeLayout(false);
-            this.panelUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotEye)).EndInit();
+            this.panelUser.ResumeLayout(false);
+            this.panelUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

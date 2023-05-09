@@ -59,5 +59,10 @@ namespace BUS
                 return "RS001";
             }
         }
+
+        public DataTable checkLogin()
+        {
+            return reseller.checkLogin();
+        }
     }
 }

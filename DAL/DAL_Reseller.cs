@@ -50,5 +50,12 @@ namespace DAL
             string sql = "SELECT TOP 1 ResellerID FROM Reseller ORDER BY ResellerID DESC";
             return Connection.selectQuery(sql);
         }
+
+        public DataTable checkLogin()
+        {
+            string sql = string.Format("SELECT ResellerName FROM Reseller WHERE username = '{0}' AND password = '{1}'",
+                reseller.Username, reseller.Password);
+            return Connection.selectQuery(sql);
+        }
     }
 }

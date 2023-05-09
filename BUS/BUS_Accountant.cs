@@ -58,5 +58,10 @@ namespace BUS
                 return "AC001";
             }   
         }
+
+        public DataTable checkLogin()
+        {
+            return accountant.checkLogin();
+        }
     }
 }

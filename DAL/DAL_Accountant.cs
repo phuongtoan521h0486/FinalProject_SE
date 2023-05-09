@@ -49,5 +49,12 @@ namespace DAL
             string sql = "SELECT TOP 1 AccountantID FROM Accountant ORDER BY AccountantID DESC";
             return Connection.selectQuery(sql);
         }
+
+        public DataTable checkLogin()
+        {
+            string sql = string.Format("SELECT AccountantName FROM Accountant WHERE Username = '{0}' AND Password = '{1}'"
+                , accountant.Username, accountant.Password);
+            return Connection.selectQuery(sql);
+        }
     }
 }
